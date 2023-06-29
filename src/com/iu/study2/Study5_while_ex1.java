@@ -49,6 +49,8 @@ public class Study5_while_ex1 {
 						}else if(select==2) {
 							System.out.println("프로그램 종료");
 							break;
+						}else {
+							level--;
 						}
 					
 					}

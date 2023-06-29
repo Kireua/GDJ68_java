@@ -29,11 +29,11 @@ public class Study5_while_ex2 {
 		System.out.println("게임을 시작합니다");
 		while(true) {
 			
-			int nomalAttack = random.nextInt(11);
-			int skill = random.nextInt(41);
-			int recovery = random.nextInt(41);
+			int nomalAttack = random.nextInt(10);
+			int skill = random.nextInt(20);
+			int recovery = random.nextInt(40);
 			int run = random.nextInt(2);
-			int monsterAttack= random.nextInt(15);
+			int monsterAttack= random.nextInt(10);
 	
 			System.out.println("행동을 선택하세요");
 			System.out.println("1.평타   2.스킬  3.회복  4.도망");
@@ -42,19 +42,18 @@ public class Study5_while_ex2 {
 			
 			if(select==1) {
 				monsterHp-=nomalAttack;
-				System.out.println("몬스터 체력: " + monsterHp+" 내 데미지 : "+nomalAttack);
-				
+				System.out.println("몬스터 체력: " + monsterHp+" 내 데미지 : "+nomalAttack);	
 			}
 			
-			else if(select==2) {
+			else if(select==2) {																	
 				if(skillUse<=0) {
 					System.out.println("스킬을 더이상 사용 할 수 없습니다.");
 					continue;
-				}
-				skillUse-=1;
+				}else {
+				skillUse-=1;																							
 				monsterHp-=skill;
-				System.out.println("몬스터 체력: " + monsterHp+" 내 데미지 : "+skill+"  남은 스킬 사용 횟수 : "+skillUse);
-				
+				System.out.println("몬스터 체력: " + monsterHp+" 내 데미지 : "+skill+"  남은 스킬 사용 횟수 : "+skillUse);	
+				}
 			}
 			
 			else if(select==3) {
@@ -74,6 +73,9 @@ public class Study5_while_ex2 {
 				}else {														//도망 실패
 					System.out.println("도망에 실패하였습니다.");
 				}	
+			}else {
+				System.out.println("잘못눌렀습니다.");
+				
 			}
 			
 			System.out.println("몬스터 턴입니다.");								//몬스터 턴
@@ -90,8 +92,6 @@ public class Study5_while_ex2 {
 		}
 		System.out.println("프로그램이 종료되었습니다.");
 				
-		
-		
 		
 		
 	}
