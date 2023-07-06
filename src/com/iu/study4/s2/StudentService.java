@@ -5,6 +5,20 @@ import java.util.Scanner;
 
 
 public class StudentService {	
+
+	public Student findByNum(Student [] students) {
+		Scanner sc = new Scanner(System.in);
+		Student student = null;
+		System.out.println("찾을려는 학생의 번호를 입력하세요.");
+		int findNum = sc.nextInt();
+		for(int i=0; i<students.length; i++) {
+			if(findNum == students[i].getNum()) {
+				 student = students[i];
+				 break;
+			}		
+		}
+		return student;	
+	}
 	
 	public Student[] makeStudents() {
 		// 학생수 입력
@@ -27,26 +41,22 @@ public class StudentService {
 			Student s1 = new Student();
 			students[i]=s1;
 			System.out.println("이름을 입력하세요");
-			students[i].name = sc.next();
+			students[i].setName(sc.next());
 			System.out.println("번호를 입력하세요");
-			students[i].num = sc.nextInt();
+			students[i].setNum(sc.nextInt());
 			System.out.println("국어 점수 입력");
-			students[i].korean = sc.nextInt();
+			students[i].setKorean(sc.nextInt());
 			System.out.println("영어 점수 입력");
-			students[i].english = sc.nextInt();
+			students[i].setEnglish(sc.nextInt());
 			System.out.println("수학 점수 입력");
-			students[i].math = sc.nextInt();
-			students[i].total = students[i].korean + students[i].english +students[i].math;
-			students[i].avg = students[i].total/3;
+			students[i].setMath(sc.nextInt());
+			s1.cal();
+//			students[i].total = students[i].korean + students[i].english +students[i].math;
+//			students[i].avg = students[i].total/3;
 		}		
 		
 		return students;
-		
-		
-
-			
-					
-		
+	
 			
 	}
 
