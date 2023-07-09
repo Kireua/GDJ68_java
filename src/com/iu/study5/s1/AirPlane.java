@@ -1,5 +1,5 @@
 package com.iu.study5.s1;
 
-public class AirPlane implements FlyAble {
+public abstract class AirPlane implements FlyAble {
 
 }
